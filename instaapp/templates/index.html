@@ -1,0 +1,72 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/icons8-instagram-48.png">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+ 
+
+    <div class="main">
+        <div>
+            <img src="static/images/instamobile1.png" alt="" class="firstimg">
+        </div>
+       
+            <img src="static/images/instamobile2.png" alt="" class="secondimg">
+            <div class="border">
+                <img src="static/images/Logo-Instagram.png" alt="" class="instalog">
+                
+                <div class="fom">
+                <form  class="" method="Post">
+                {% csrf_token %}
+    
+                    <input type="text" name="username" placeholder="Phone number,Username or email" required><br>
+                    <div class="fom1">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="login">
+                    
+
+                    
+                    <input type="submit" value="Login" class="btn">
+                
+            </div>
+                  </form>
+                  
+                  
+                </div>
+         
+                
+      <div class="face" >            
+    <img src="static/images/instafacebook.png" alt="" class="logoface">
+    <p>Login With Facebook</p>
+     </div>
+     <div class="forgot"><p class="forg">Forgot Password?</p></div>
+     <div class="message">
+
+        {%for i in messages %}
+        <h4> {{i}} </h4>
+        {%endfor%}
+        
+    </div>
+           
+        </div>
+        
+        <div class="border2">
+    <p class="bord2">Dont have an Account?  <a href="/register">Sign Up</a></p>
+   
+        </div>
+        <div class="get">
+       <p class="gett"> Get the app</p>
+    </div>
+    <div class="icon">
+        <img src="static/images/instagoogleplay.png" alt="" class="instagoogle">
+        <img src="static/images/instamicrosoft.png" alt="" class="instamicro">
+    </div>
+</body>
+</html>

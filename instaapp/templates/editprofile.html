@@ -1,0 +1,44 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/icons8-instagram-48.png">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+</head>
+<body>
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="widgets">
+            <h3>EDIT THIS PROFILE</h3>
+
+            <div class="widge2">
+                <h5>Image:  {{form.image}} </h5>
+
+
+                <h5>Name: {{form.name}} </h5>
+
+                    <h5>Phone: {{form.phone}} </h5>
+
+                        <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bio: {{form.bio}} </h5>
+            </div>
+            <input type="submit" value="Submit" class="widbutton">
+
+        </div>
+
+
+
+     
+
+
+
+    
+    </form>
+
+    
+ 
+</body>
+</html>

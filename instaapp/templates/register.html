@@ -1,0 +1,64 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+
+</head>
+
+<body>
+    <div class="place">
+        
+
+            <div class="logodiv">
+
+                <img class="reglogo" src="static/images/Logo-Instagram.png" alt="">
+            </div>
+            <div class="pdiv">
+
+                <p class="regp"> Sign up to see photos and videos <br>from your friends.</p>
+            </div>
+            <div class="logdiv">
+                <div class="flog">
+
+                    <i class="fa-brands fa-square-facebook" style="color: #fafcff;"></i>
+                </div>
+                <p class="logp" > Log in with Facebook</p>
+
+            </div>
+            <div class="linediv">
+                <div class="line1">
+
+                </div>
+                <h1>OR</h1>
+                <div class="line1">
+
+                </div>
+                
+            </div>
+
+            {% for i in messages%}
+            <H1>{{i}}</H1>
+            
+            {% endfor %}
+            <div class="place2">
+            <form method="post">
+                {% csrf_token %}
+                <input class="input" type="email" placeholder="Email" name="email"><br>
+                <input class="input" type="text" placeholder="First Name" name="firstname"><br>
+                <input class="input" type="text" placeholder="Last Name" name="lastname"><br>
+                <input class="input" type="text" placeholder="UserName" name="username"><br>
+                <input class="input" type="password" placeholder="Password" name="password"><br>
+                <button class="sublogdiv" type="submit">Sign up</button>
+                
+                
+            </form>
+        </div>
+    </div>
+</body>
+</html>

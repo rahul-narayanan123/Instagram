@@ -1,0 +1,255 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/icons8-instagram-48.png">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+</head>
+
+<body>
+    <div class="Hplace">
+        <div class="Hplace2">
+            <img class="reglogo" src="static/images/Logo-Instagram.png" alt="">
+           
+
+            
+            
+        <div class="leftoptions">
+            <i class="fa-solid fa-house" ></i><a href="/home" style="font-weight: 700;">Home</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i><a href="/search">Search</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-regular fa-compass"></i><a href="">Explore</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-solid fa-circle-play"></i><a href="">Reels</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-brands fa-facebook-messenger"></i><a href="">Messages</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-regular fa-heart"></i><a href="">Notifications</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-solid fa-square-plus"></i><a href="/addpost">Create</a>
+        </div>        
+        <div class="leftoptions">
+            <i class="fa-regular fa-circle-user"></i><a href="/myprofile">Profile</a>
+        </div>        
+        <div class="leftoptions">
+            <i class="fa-solid fa-bars"></i><a href="">More</a>
+        </div>
+        
+        
+    </div>
+    
+    </div>
+
+    <div class="status">
+    <div class="status1">
+        <div class="img1">
+
+            <img src="static/images/pimages1.jfif" alt="" >
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages2.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages3.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages4.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages5.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages6.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages7.jfif" alt="" >
+
+        </div>
+        <div class="img1">
+            <img src="static/images/pimages8.jfif" alt="" >
+
+        </div>
+        
+        
+            
+        </div>
+    </div>
+    
+
+        <div class="rightdiv">
+            <div class="logout">
+
+                <a href="/logout"><button type="submit">Logout</button></a>
+            </div>
+            <div class="userpright">
+            
+                {{user.profile.user}}
+                <p>Follow</p>
+            </div>
+            
+        <div class="rightdiv1">
+
+        <img src="{{user.profile.image.url}}" alt="" >
+        
+    </div>
+
+    <div class="userpright1">
+            
+        <p>Quick learner &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Follow</p>
+       
+    </div>
+    
+<div class="rightdiv2">
+
+<img src="static/images/new1.jfif" alt="" >
+
+</div>
+
+
+
+<div class="rightdiv3">
+
+<img src="static/images/new2.jfif" alt="" >
+
+<div class="userpright2">
+            
+    <p>Deep_lover_s &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Follow</p>
+   
+</div>
+
+</div>
+
+<div class="rightdiv3">
+
+    <img src="static/images/new3.jfif" alt="" >
+    
+    <div class="userpright3">
+                
+        <p>No_time_to_ &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Follow</p>
+       
+    </div>
+    
+    </div>
+
+
+
+
+    </div>
+    <div class="suggetion">
+        <p class="sugg">Suggested for you &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;See All</p>
+    </div>
+       
+
+
+        <div class="Hplace3">
+        <div class="subHplace3">  
+        {% for i in a%}
+       
+            <div class="name_id">
+               
+
+                <a href="profileadds/{{i.user.profile.id}}">    <img src="{{i.user.profile.image.url}}" alt="" >
+
+                    <div class="userp">
+
+                    {{i.user.profile.user}}
+                    
+                    {{i.name}}</a>
+            
+
+                </div>
+            </div>
+            <div class="subimg">
+
+                
+               <a href="{% url 'comment' i.id %}"> <img src="{{i.image.url}}" alt=""></a>
+            </div>
+            
+            <div class="name">
+                
+                <div class="namei">
+
+                    
+                    <i class="fa-regular fa-heart" style="color: #050505;"></i>
+                </div>
+                
+            
+                <div class="namei1">
+
+                <i class="fa-sharp fa-regular fa-comment fa-rotate-270" style="color: #0c0d0d;"></i>
+             
+                </div>
+                <div class="namei2">
+
+                <i class="fa-regular fa-paper-plane" style="color: #0a0a0b;"></i>
+                </div>
+                <div class="namei3">
+
+                <i class="fa-regular fa-bookmark" style="color: #0a0a0b;"></i>
+                </div>
+
+              
+                <div class="coment">
+
+                    <div class="comment">
+                        
+                      <form method="POST">
+                            {{ form}}
+                            
+                        </form>
+                        
+                    </div>
+                </div>
+                
+            </div>
+
+            
+            
+            {% endfor%}
+           
+        </div>
+        <!-- <div class="maincontents">
+
+            <footer>
+                <ul>
+                    <a href="#">Meta</a>
+                    <a href="#">About</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Jobs</a>
+                    <a href="#">Help</a>
+                    <a href="#">API</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Top Accounts</a>
+                    <a href="#">Locations</a>
+                    <a href="#">Instagram Lite</a>
+                    <a href="#">Contact Uploading & Non-Useres</a>
+                </ul>
+                
+                <ul class="last_footer">
+                    <li>English</li>
+                    <li>&copy; 2023 Instagram from Meta</li>     
+                </ul>
+            </footer> -->
+            
+        <!-- </div> -->
+            
+</body>
+</html>

@@ -1,0 +1,121 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="static/images/icons8-instagram-48.png">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="{% static 'css/index.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+
+</head>
+<body>
+    <div class="Hplace">
+        <div class="Hplace2">
+            <img class="reglogo" src="static/images/Logo-Instagram.png" alt="">
+           
+
+            
+            
+        <div class="leftoptions">
+            <i class="fa-solid fa-house" ></i><a href="/home" style="font-weight: 700;">Home</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-sharp fa-solid fa-magnifying-glass"></i><a href="/search">Search</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-regular fa-compass"></i><a href="">Explore</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-solid fa-circle-play"></i><a href="">Reels</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-brands fa-facebook-messenger"></i><a href="">Messages</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-regular fa-heart"></i><a href="">Notifications</a>
+        </div>
+        <div class="leftoptions">
+            <i class="fa-solid fa-square-plus"></i><a href="/addpost">Create</a>
+        </div>        
+        <div class="leftoptions">
+            <i class="fa-regular fa-circle-user"></i><a href="/myprofile">Profile</a>
+        </div>        
+        <div class="leftoptions">
+            <i class="fa-solid fa-bars"></i><a href="">More</a>
+        </div>
+        
+        
+    </div>
+    
+    </div>
+    <div class="profimg">
+            
+        <img src="{{user.profile.image.url}}" class="nonimg">
+        </div>
+
+    <div class="myprofile">
+        
+        
+         
+            <div class="username">
+                <p>{{user.username}}</p><br>
+                <p>21 post    &nbsp;&nbsp;&nbsp;&nbsp;   &nbsp;  603 followers   &nbsp;&nbsp; &nbsp;&nbsp;   611 following</p>
+            </div>
+        </div>
+
+
+        
+        <div class="edit">
+            
+            <a href="/edit"><button type="submit">Edit Profile</button></a>
+            
+            <a href="/logout"><button type="submit">logout</button></a>
+            <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="midimg">
+            <div class="ico">
+                <i class="fa-solid fa-table-cells" style="color: #0a0a0a;"></i>POST
+
+            </div>
+            <div class="ico1">
+
+            <i class="fa-solid fa-circle-play"></i>REELS
+            </div>
+            <div class="ico2">
+
+            <i class="fa-regular fa-bookmark" style="color: #0a0a0b;"></i>SAVED
+            </div>
+            <div class="ico3">
+
+            <i class="fa-regular fa-id-badge" style="color: #080808;"></i>TAGGED
+            </div>
+            
+        </div>
+        
+
+
+        <div class="myprofile2">
+
+            {% for i in d %}
+       
+    <div class="post">
+            <div class="harriimg">
+                <img src="{{i.image.url}}"  >
+
+            </div>
+            <div class="imgedit">
+                <a href="editpost/{{i.id}}"><button type="submit">Edit</button></a>
+
+                <a href="deletepost/{{i.id}}"><button type="submit">Delete</button></a>   
+            </div>
+
+      
+        </div>
+      {% endfor %}
+      
+    </div>
+    </body>
+    </html>
